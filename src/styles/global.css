@@ -5,16 +5,32 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px
-		rgba(var(--gray), 33%);
+	/* 1. 强调色 (Accent) */
+	/* 链接/按钮 - 我们设为纯白以获得高对比度 */
+	--accent: #ffffff;
+	--accent-dark: #b3b3b3; /* 链接悬停时 */
+
+	/* 2. 文本颜色 (Text) */
+	/* 原本是暗色，我们改成亮色 */
+	--black: 230, 230, 230;       /* 标题 (RGB: #E6E6E6) */
+	--gray-dark: 210, 210, 210;   /* 主体文字 (RGB: #D2D2D2) */
+
+	/* 3. 背景颜色 (Background) */
+	/* 原本是亮色，我们改成暗色 */
+	--gray-light: 30, 30, 30;     /* 代码块背景 (RGB: #1E1E1E) */
+	
+	/* (新) 我们需要一个主背景变量 */
+	--main-bg: 18, 18, 18;        /* 主背景 (RGB: #121212) */
+
+	/* 4. 功能性颜色 (Functional) */
+	--gray: 140, 140, 140;        /* 次要文字 (RGB: #8C8C8C) */
+
+	/* (关键!) 重新定义渐变和阴影 */
+	/* 把原来的“浅色渐变”替换为“纯深色背景” */
+	--gray-gradient: rgb(var(--main-bg)); 
+	
+	/* 阴影在深色模式下很难看清，我们用一个更深的纯黑阴影 */
+	--box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 @font-face {
 	font-family: "Atkinson";
@@ -35,7 +51,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	background: var(--gray-gradient);
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;

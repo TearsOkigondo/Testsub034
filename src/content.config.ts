@@ -13,6 +13,7 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: image().optional(),
+			subtitle: z.string().optional(), // .optional() 意思是“可选的”
 		}),
 });
 

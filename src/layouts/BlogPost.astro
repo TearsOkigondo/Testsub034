@@ -42,6 +42,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				text-align: center;
 				line-height: 1;
 			}
+			.subtitle {
+   				font-size: 1.25em; /* 字号较小 (相对于 h1) */
+    			color: rgb(var(--gray)); /* 颜色较淡 (使用你的 CSS 变量) */
+    			font-style: italic; /* 斜体 */
+    
+    			/* (可选) 调整间距，让它离主标题更近 */
+    			margin-top: -0.5em; 
+    			margin-bottom: 2em;
+    			font-weight: 400; /* 确保它不是粗体 */
+  			}
+			
 			.title h1 {
 				margin: 0 0 0.5em 0;
 			}
