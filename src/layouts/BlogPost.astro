@@ -8,7 +8,7 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, subtitle } = Astro.props;
 ---
 
 <html lang="en">
@@ -38,12 +38,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.title {
 				margin-bottom: 1em;
+				word-break: keep-all;
 				padding: 1em 0;
 				text-align: center;
 				line-height: 1;
 			}
 			.subtitle {
-   				font-size: 1.25em; /* 字号较小 (相对于 h1) */
+   				font-size: 1.2em; /* 字号较小 (相对于 h1) */
     			color: rgb(var(--gray)); /* 颜色较淡 (使用你的 CSS 变量) */
     			font-style: italic; /* 斜体 */
     
@@ -86,6 +87,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							}
 						</div>
 						<h1>{title}</h1>
+						{subtitle && (
+     					 <p class="subtitle">{subtitle}</p>
+   						 )}
 						<hr />
 					</div>
 					<slot />
